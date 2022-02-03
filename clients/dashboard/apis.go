@@ -78,12 +78,6 @@ func (c *Client) CreateAPI(def *objects.DBApiDefinition) (string, error) {
 			return "", UseUpdateError
 		}
 
-		if api.Proxy.ListenPath == def.Proxy.ListenPath {
-			if api.Domain == def.Domain {
-				fmt.Println("Warning: Listen Path Exists")
-				return "", UseUpdateError
-			}
-		}
 	}
 
 	if def.APIID != "" {
